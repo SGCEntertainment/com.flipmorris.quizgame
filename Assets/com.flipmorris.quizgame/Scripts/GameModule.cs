@@ -16,9 +16,22 @@ public class GameModule : MonoBehaviour
     [SerializeField] Image progressAmount;
     [SerializeField] Text timerText;
 
+    [Space(10)]
+    [SerializeField] Text questionCountText;
+    [SerializeField] Text questionBodyText;
+
     public static Action<Question> OnQuestionUpdated { get; set; }
 
-    private void OnEnable() => Init();
+    private void OnEnable()
+    {
+        timeCount = 0;
+        questionId = 0;
+
+        totalQuestionCount = GameManager.Instance.Data.questionCount;
+        progressAmount.fillAmount = questionId / totalQuestionCount;
+    }
+
+    private void Start() => Init();
 
     private void Awake()
     {
@@ -33,11 +46,13 @@ public class GameModule : MonoBehaviour
         quizNameText.text = GameManager.Instance.Data.quizName;
         subjectAndChapterText.text = GameManager.Instance.Data.subjectChapter;
 
-        timeCount = 0;
-        questionId = 0;
+        UpdateQuestion();
+    }
 
-        totalQuestionCount = GameManager.Instance.Data.questionCount;
-        progressAmount.fillAmount = questionId / totalQuestionCount;
+    private void UpdateQuestion()
+    {
+        questionCountText.text = $"Q.{questionId}/{GameManager.Instance.Data.questionCount}";
+        questionBodyText.text = GameManager.Instance.CurrentQuestion.question;
 
         OnQuestionUpdated?.Invoke(GameManager.Instance.CurrentQuestion);
     }

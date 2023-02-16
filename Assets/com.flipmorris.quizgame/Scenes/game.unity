@@ -937,6 +937,8 @@ MonoBehaviour:
   subjectAndChapterText: {fileID: 965715999}
   progressAmount: {fileID: 2118630178}
   timerText: {fileID: 71661795}
+  questionCountText: {fileID: 1168935568}
+  questionBodyText: {fileID: 613801213}
 --- !u!1 &386662325
 GameObject:
   m_ObjectHideFlags: 0
