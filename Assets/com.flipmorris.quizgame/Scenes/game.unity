@@ -1319,7 +1319,7 @@ GameObject:
   - component: {fileID: 511762645}
   - component: {fileID: 511762644}
   m_Layer: 0
-  m_Name: count (1)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1553,8 +1553,9 @@ GameObject:
   - component: {fileID: 557269069}
   - component: {fileID: 557269068}
   - component: {fileID: 557269071}
+  - component: {fileID: 557269072}
   m_Layer: 0
-  m_Name: variant (2)
+  m_Name: ansver btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1672,6 +1673,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0f5bc57068e6014388e90c576bd3270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &557269072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557269066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c471c45b95149994aada9ff161ccdae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &591926269
@@ -2069,7 +2082,7 @@ GameObject:
   - component: {fileID: 686203838}
   - component: {fileID: 686203837}
   m_Layer: 0
-  m_Name: count (1)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2108,7 +2121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2689,8 +2702,9 @@ GameObject:
   - component: {fileID: 934723237}
   - component: {fileID: 934723236}
   - component: {fileID: 934723239}
+  - component: {fileID: 934723240}
   m_Layer: 0
-  m_Name: variant (1)
+  m_Name: ansver btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2808,6 +2822,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0f5bc57068e6014388e90c576bd3270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &934723240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934723234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c471c45b95149994aada9ff161ccdae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &965715997
@@ -3566,8 +3592,9 @@ GameObject:
   - component: {fileID: 1198123855}
   - component: {fileID: 1198123854}
   - component: {fileID: 1198123857}
+  - component: {fileID: 1198123858}
   m_Layer: 0
-  m_Name: variant (3)
+  m_Name: ansver btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3685,6 +3712,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0f5bc57068e6014388e90c576bd3270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1198123858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198123852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c471c45b95149994aada9ff161ccdae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1229088061
@@ -4372,7 +4411,7 @@ GameObject:
   - component: {fileID: 1610030229}
   - component: {fileID: 1610030228}
   m_Layer: 0
-  m_Name: count (1)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4411,7 +4450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4483,7 +4522,7 @@ GameObject:
   - component: {fileID: 1647799951}
   - component: {fileID: 1647799950}
   m_Layer: 0
-  m_Name: count (1)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4522,7 +4561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5513,8 +5552,9 @@ GameObject:
   - component: {fileID: 1958919654}
   - component: {fileID: 1958919653}
   - component: {fileID: 1958919656}
+  - component: {fileID: 1958919657}
   m_Layer: 0
-  m_Name: variant
+  m_Name: ansver btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5632,6 +5672,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0f5bc57068e6014388e90c576bd3270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1958919657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958919651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c471c45b95149994aada9ff161ccdae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1968020935

@@ -22,9 +22,64 @@ MonoBehaviour:
     The sport can be dangerous, so it's important to stay focused and take in as
     much knowledge as you can so you don't hurt yourself or your opponent.
   questions:
-  - question: 
-    a: 
-    b: 
-    c: 
-    d: 
-    ansver: 
+  - question: What do football players wear on their heads?
+    a: Helmets
+    b: Hats
+    c: Buckets
+    d: Bands
+    ansver: Helmets
+  - question: Which position is responsible for throwing the ball?
+    a: Tight end
+    b: Guard
+    c: Center
+    d: Quarterback
+    ansver: Quarterback
+  - question: Playing on the offensive line, who snaps the ball to start a play?
+    a: Guard
+    b: Center
+    c: Tackle
+    d: Tight end
+    ansver: Center
+  - question: How many players take the field on defense?
+    a: 8
+    b: 10
+    c: 11
+    d: 12
+    ansver: 11
+  - question: What do receivers run on the football field?
+    a: Lanes
+    b: Routes
+    c: Points
+    d: Angles
+    ansver: Routes
+  - question: What is it called when the quarterback gets tackled before throwing
+      the football?
+    a: A loss
+    b: A down
+    c: A pocket tackle
+    d: A sack
+    ansver: A sack
+  - question: Which position is primarily responsible for covering receivers?
+    a: Linebackers
+    b: Defensive ends
+    c: Cornerbacks
+    d: Defensive tackles
+    ansver: Cornerbacks
+  - question: ' many forward passes are allowed during a play?'
+    a: 1
+    b: 2
+    c: 3
+    d: Infinity
+    ansver: 1
+  - question: What's the line where the ball is snapped called?
+    a: Starting line
+    b: Defending line
+    c: Line of scrimmage
+    d: Line of play
+    ansver: Line of scrimmage
+  - question: How many points is a touchdown worth?
+    a: 3
+    b: 6
+    c: 7
+    d: 10
+    ansver: 6

@@ -10,7 +10,6 @@ public class QuestionData : ScriptableObject
     public string chapter;
 
     [Space(10)]
-    public int totalQuestionCount;
     public float totalTimeCount;
 
     [Space(10), TextArea]

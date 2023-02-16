@@ -5,10 +5,17 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get => FindObjectOfType<GameManager>(); }
 
-    public (string quizName, string subjectChapter, int questionCount) data
+    public (string quizName, string subjectChapter, int questionCount) Data
     {
-        get => (QuestionData.quizName, $"({QuestionData.subject}/{QuestionData.chapter})", QuestionData.totalQuestionCount);
+        get => (QuestionData.quizName, $"({QuestionData.subject}/{QuestionData.chapter})", QuestionData.questions.Length);
     }
+
+    public Question CurrentQuestion
+    {
+        get => QuestionData.questions[questionId];
+    }
+
+    private int questionId;
 
     [SerializeField] GameObject menu;
     [SerializeField] GameObject game;
@@ -38,7 +45,7 @@ public class GameManager : MonoBehaviour
         subjectText.text = QuestionData.subject;
         chapterText.text = QuestionData.chapter;
 
-        totalQuestionsText.text = $"Total Questions: <b>{QuestionData.totalQuestionCount}</b>";
+        totalQuestionsText.text = $"Total Questions: <b>{QuestionData.questions.Length}</b>";
         totalTimeText.text = $"Total Time: <b>{QuestionData.totalTimeCount} min</b>";
 
         duplicateTimerText.text = $"{QuestionData.totalTimeCount}:00";
@@ -53,6 +60,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        questionId = 0;
+
         result.SetActive(false);
         menu.SetActive(false);
 

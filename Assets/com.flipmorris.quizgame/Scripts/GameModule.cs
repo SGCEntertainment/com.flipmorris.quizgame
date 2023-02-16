@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class GameModule : MonoBehaviour
 {
@@ -15,18 +16,30 @@ public class GameModule : MonoBehaviour
     [SerializeField] Image progressAmount;
     [SerializeField] Text timerText;
 
+    public static Action<Question> OnQuestionUpdated { get; set; }
+
     private void OnEnable() => Init();
+
+    private void Awake()
+    {
+        AnsverBtn.OnAnsverSelected += (id) =>
+        {
+            Debug.Log(id);
+        };
+    }
 
     public void Init()
     {
-        quizNameText.text = GameManager.Instance.data.quizName;
-        subjectAndChapterText.text = GameManager.Instance.data.subjectChapter;
+        quizNameText.text = GameManager.Instance.Data.quizName;
+        subjectAndChapterText.text = GameManager.Instance.Data.subjectChapter;
 
         timeCount = 0;
         questionId = 0;
 
-        totalQuestionCount = GameManager.Instance.data.questionCount;
+        totalQuestionCount = GameManager.Instance.Data.questionCount;
         progressAmount.fillAmount = questionId / totalQuestionCount;
+
+        OnQuestionUpdated?.Invoke(GameManager.Instance.CurrentQuestion);
     }
 
     private void Update()
