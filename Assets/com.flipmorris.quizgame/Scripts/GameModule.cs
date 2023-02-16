@@ -9,6 +9,9 @@ public class GameModule : MonoBehaviour
 
     private int questionId;
     private int totalQuestionCount;
+
+    private int correntAnsverCount;
+    private int wrongAnsverCount;
     
     private Question Current { get; set; }
 
@@ -31,6 +34,9 @@ public class GameModule : MonoBehaviour
         questionId = 0;
         targetProgress = 0;
 
+        correntAnsverCount = 0;
+        wrongAnsverCount = 0;
+
         totalQuestionCount = GameManager.Instance.Data.questionCount;
         progressAmount.fillAmount = questionId / totalQuestionCount;
 
@@ -42,13 +48,31 @@ public class GameModule : MonoBehaviour
 
     private void Awake()
     {
-        AnsverBtn.OnAnsverSelected += (id) =>
+        AnsverBtn.OnAnsverSelected += (ansver) =>
         {
+            if(string.Equals(ansver, Current.ansver))
+            {
+                correntAnsverCount++;
+            }
+            else
+            {
+                wrongAnsverCount++;
+            }
+
             questionId++;
             targetProgress = (float)questionId / totalQuestionCount;
 
             if(questionId >= totalQuestionCount)
             {
+                ResultPayload resultPayload = new ResultPayload
+                {
+                    correctCount = correntAnsverCount,
+                    wrongCount = wrongAnsverCount,
+
+                    totalCount = totalQuestionCount,
+                    totalTime = timeCount,
+                };
+
                 GameManager.Instance.ShowResult();
                 return;
             }

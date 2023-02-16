@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
         get => (QuestionData.quizName, $"{QuestionData.subject}/{QuestionData.chapter}", QuestionData.questions.Length);
     }
 
+    public float QuestTime
+    {
+        get => QuestionData.totalTimeCount * 60.0f;
+    }
 
     [SerializeField] GameObject menu;
     [SerializeField] GameObject game;
