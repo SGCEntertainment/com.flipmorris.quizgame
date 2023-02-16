@@ -4,6 +4,7 @@ using System;
 
 public class GameModule : MonoBehaviour
 {
+    private float targetProgress;
     private float timeCount;
 
     private int questionId;
@@ -28,9 +29,13 @@ public class GameModule : MonoBehaviour
     {
         timeCount = 0;
         questionId = 0;
+        targetProgress = 0;
 
         totalQuestionCount = GameManager.Instance.Data.questionCount;
         progressAmount.fillAmount = questionId / totalQuestionCount;
+
+        Current = GameManager.Instance.GetQuestion(questionId);
+        SetQuestion();
     }
 
     private void Start() => Init();
@@ -40,6 +45,8 @@ public class GameModule : MonoBehaviour
         AnsverBtn.OnAnsverSelected += (id) =>
         {
             questionId++;
+            targetProgress = (float)questionId / totalQuestionCount;
+
             if(questionId >= totalQuestionCount)
             {
                 GameManager.Instance.ShowResult();
@@ -89,5 +96,6 @@ public class GameModule : MonoBehaviour
         float sec = Mathf.RoundToInt(timeCount % 60);
 
         timerText.text = string.Format("{0:00}:{1:00}", min, sec);
+        progressAmount.fillAmount = Mathf.MoveTowards(progressAmount.fillAmount, targetProgress, 0.5f * Time.deltaTime);
     }
 }

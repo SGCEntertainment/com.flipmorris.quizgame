@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     public (string quizName, string subjectChapter, int questionCount) Data
     {
-        get => (QuestionData.quizName, $"({QuestionData.subject}/{QuestionData.chapter})", QuestionData.questions.Length);
+        get => (QuestionData.quizName, $"{QuestionData.subject}/{QuestionData.chapter}", QuestionData.questions.Length);
     }
 
 
