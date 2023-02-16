@@ -3,6 +3,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get => FindObjectOfType<GameManager>(); }
+
+    public (string quizName, string subjectChapter, int questionCount) data
+    {
+        get => (QuestionData.quizName, $"({QuestionData.subject}/{QuestionData.chapter})", QuestionData.totalQuestionCount);
+    }
+
     [SerializeField] GameObject menu;
     [SerializeField] GameObject game;
     [SerializeField] GameObject result;
