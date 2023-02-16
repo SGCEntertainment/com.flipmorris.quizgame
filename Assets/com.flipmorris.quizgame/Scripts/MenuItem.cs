@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MenuItem : MonoBehaviour
 {
-    private static float smoothTime = 0.05f;
+    private static float smoothTime = 0.15f;
     private Vector2 TargetPosition;
 
     private bool IsEnable { get; set; }
@@ -18,7 +18,7 @@ public class MenuItem : MonoBehaviour
 
     private void Awake()
     {
-        TargetPosition = transform.position;
+        TargetPosition = transform.localPosition;
     }
 
     private void OnEnable()
@@ -26,30 +26,25 @@ public class MenuItem : MonoBehaviour
         IsEnable = false;
         IsDestinated = false;
 
-        transform.position += Vector3.down * 2000;
+        transform.localPosition += Vector3.down * 2000;
 
         StartCoroutine(nameof(Delay));
     }
 
     private void OnDisable()
     {
-        if (transform.parent.parent.gameObject.activeSelf)
-        {
-            transform.parent.gameObject.SetActive(false);
-        }
-
         StopCoroutine(nameof(Delay));
     }
 
     private void Update()
     {
-        if(!IsEnable || IsDestinated)
+        if (!IsEnable || IsDestinated)
         {
             return;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, TargetPosition, 4000 * Time.deltaTime);
-        if((Vector2)transform.position == TargetPosition)
+        transform.localPosition = Vector2.MoveTowards(transform.localPosition, TargetPosition, 6000 * Time.deltaTime);
+        if ((Vector2)transform.localPosition == TargetPosition)
         {
             IsDestinated = true;
         }

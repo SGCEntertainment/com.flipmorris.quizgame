@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 786ef704479073343b49d29528bffa56, type: 3}
+  m_Name: Soccer
+  m_EditorClassIdentifier: 
+  quizName: Basic  Football Quiz
+  subject: Soccer
+  chapter: General rules
+  totalQuestionCount: 10
+  totalTimeCount: 480
+  instructions: If you've ever been around the sport of football, you know there
+    are many concepts and rules to learn before you can be effective on the field.
+    The sport can be dangerous, so it's important to stay focused and take in as
+    much knowledge as you can so you don't hurt yourself or your opponent.
+  questions:
+  - question: 
+    a: 
+    b: 
+    c: 
+    d: 
+    ansver: 
