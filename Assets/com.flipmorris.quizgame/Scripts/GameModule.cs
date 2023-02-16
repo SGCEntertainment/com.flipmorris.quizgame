@@ -8,6 +8,8 @@ public class GameModule : MonoBehaviour
 
     private int questionId;
     private int totalQuestionCount;
+    
+    private Question Current { get; set; }
 
     [SerializeField] Text quizNameText;
     [SerializeField] Text subjectAndChapterText;
@@ -37,24 +39,46 @@ public class GameModule : MonoBehaviour
     {
         AnsverBtn.OnAnsverSelected += (id) =>
         {
-            Debug.Log(id);
+            questionId++;
+            if(questionId >= totalQuestionCount)
+            {
+                GameManager.Instance.ShowResult();
+                return;
+            }
+
+            SetQuestion();
         };
     }
 
     public void Init()
     {
+        Current = GameManager.Instance.GetQuestion(questionId);
+
         quizNameText.text = GameManager.Instance.Data.quizName;
         subjectAndChapterText.text = GameManager.Instance.Data.subjectChapter;
 
-        UpdateQuestion();
+        SetQuestion();
     }
 
-    private void UpdateQuestion()
+    private void SetQuestion()
     {
-        questionCountText.text = $"Q.{questionId}/{GameManager.Instance.Data.questionCount}";
-        questionBodyText.text = GameManager.Instance.CurrentQuestion.question;
+        Current = GameManager.Instance.GetQuestion(questionId);
 
-        OnQuestionUpdated?.Invoke(GameManager.Instance.CurrentQuestion);
+        questionCountText.text = $"Q.{questionId + 1}/{GameManager.Instance.Data.questionCount}";
+        questionBodyText.text = Current.question;
+
+        OnQuestionUpdated?.Invoke(Current);
+
+        AnsverBtn[] ansverBtns = FindObjectsOfType<AnsverBtn>();
+        foreach(AnsverBtn ab in ansverBtns)
+        {
+            ab.gameObject.SetActive(false);
+        }
+
+        foreach (AnsverBtn ab in ansverBtns)
+        {
+            ab.gameObject.SetActive(true);
+        }
     }
 
     private void Update()

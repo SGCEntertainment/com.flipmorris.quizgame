@@ -10,12 +10,6 @@ public class GameManager : MonoBehaviour
         get => (QuestionData.quizName, $"({QuestionData.subject}/{QuestionData.chapter})", QuestionData.questions.Length);
     }
 
-    public Question CurrentQuestion
-    {
-        get => QuestionData.questions[questionId];
-    }
-
-    private int questionId;
 
     [SerializeField] GameObject menu;
     [SerializeField] GameObject game;
@@ -56,12 +50,15 @@ public class GameManager : MonoBehaviour
         menu.SetActive(true);
     }
 
+    public Question GetQuestion(int id)
+    {
+        return QuestionData.questions[id];
+    }
+
     public void ExitGame() => Application.Quit();
 
     public void StartGame()
     {
-        questionId = 0;
-
         result.SetActive(false);
         menu.SetActive(false);
 
@@ -72,5 +69,11 @@ public class GameManager : MonoBehaviour
     {
         game.SetActive(false);
         menu.SetActive(true);
+    }
+
+    public void ShowResult()
+    {
+        game.SetActive(false);
+        result.SetActive(true);
     }
 }
