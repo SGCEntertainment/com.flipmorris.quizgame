@@ -17,15 +17,14 @@ public class ResultModule : MonoBehaviour
     [SerializeField] Text totalTimeText;
     [SerializeField] Text avgTimeText;
 
-    private void OnEnable()
-    {
-        targetProgress = 0;
-    }
+    [Space(10)]
+    [SerializeField] Text detailsText;
 
     public void Init(ResultPayload resultPayload)
     {
         targetProgress = (float)resultPayload.correctCount / resultPayload.totalCount;
-        progressText.text = $"{resultPayload.correctCount}/{resultPayload.totalCount}";
+        
+        progressText.text = $"{resultPayload.correctCount}/{resultPayload.totalCount}\nyour score";
 
         correctText.text = $"{resultPayload.correctCount}";
         wrongText.text = $"{resultPayload.wrongCount}";
@@ -37,6 +36,12 @@ public class ResultModule : MonoBehaviour
         float avgMin = Mathf.RoundToInt(resultPayload.totalTime / resultPayload.totalCount / 60);
         float avgSec = Mathf.RoundToInt(resultPayload.totalTime / resultPayload.totalCount % 60);
         avgTimeText.text = string.Format("{0:00}, {1:00}", avgMin, avgSec);
+
+        float progressPercent = resultPayload.correctCount * 100.0f / resultPayload.totalCount;
+        Color color = progressPercent > 60.0f ? Color.green : Color.red;
+        string resultString = progressPercent > 60 ? "passed" : "failed";
+
+        detailsText.text = $"Congratulations! \r\nYou have {resultString} this test with {progressPercent}%.";
     }
 
     private void Update()

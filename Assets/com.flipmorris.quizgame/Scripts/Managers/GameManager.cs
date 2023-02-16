@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject menu;
     [SerializeField] GameObject game;
-    [SerializeField] GameObject result;
+    [SerializeField] ResultModule result;
 
     [Space(10)]
     [SerializeField] Text quizName;
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         instructionsText.text = QuestionData.instructions;
 
         game.SetActive(false);
-        result.SetActive(false);
+        result.gameObject.SetActive(false);
         menu.SetActive(true);
     }
 
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        result.SetActive(false);
+        result.gameObject.SetActive(false);
         menu.SetActive(false);
 
         game.SetActive(true);
@@ -75,9 +75,11 @@ public class GameManager : MonoBehaviour
         menu.SetActive(true);
     }
 
-    public void ShowResult()
+    public void ShowResult(ResultPayload resultPayload)
     {
         game.SetActive(false);
-        result.SetActive(true);
+
+        result.Init(resultPayload);
+        result.gameObject.SetActive(true);
     }
 }

@@ -73,7 +73,7 @@ public class GameModule : MonoBehaviour
                     totalTime = timeCount,
                 };
 
-                GameManager.Instance.ShowResult();
+                GameManager.Instance.ShowResult(resultPayload);
                 return;
             }
 
